@@ -1,0 +1,33 @@
+class Todo {
+  constructor(){
+    this.arr = [];
+  }
+
+  add(str){
+    this.arr.push(str);
+    
+  }
+
+  remove(ind){
+    if(ind >= this.arr.length) return;
+    this.arr.splice(ind,1);
+  }
+
+  update(ind,str){
+    if(ind >= this.arr.length) return;
+    this.arr[ind] = str;
+  }
+
+  getAll(){
+    return this.arr;
+  }
+
+  get(ind){
+    if(ind >= this.arr.length) return null;
+    return this.arr[ind];
+  }
+
+  clear(){
+    this.arr = [];
+  }
+}
