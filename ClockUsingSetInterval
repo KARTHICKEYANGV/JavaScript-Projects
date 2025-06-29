@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="hrs">00</h2>
+    <h2 id="mins">00</h2>
+    <h2 id="secs">00</h2>
+    <script>
+        const secs = document.getElementById('secs');
+        const mins = document.getElementById('mins');
+        const hrs = document.getElementById('hrs');
+        let secCount = 0;
+        let minCount = 0;
+        let hrsCount = 0;
+        setInterval(function(){
+            secCount++;
+            if(secCount == 60) {
+                secCount = 0;
+                minCount++;
+                if(minCount == 60){
+                    minCount = 0;
+                    hrsCount++;
+                }
+            }
+            secs.innerHTML = secCount;
+            mins.innerHTML = minCount;
+            hrs.innerHTML = hrsCount;
+        },10)
+    </script>
+</body>
+</html>
